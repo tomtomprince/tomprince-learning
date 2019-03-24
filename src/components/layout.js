@@ -6,7 +6,7 @@ class Layout extends React.Component {
 
     return (
       <div>
-        <header>
+        {/* <header>
           <h3>
             <Link
               style={{
@@ -19,13 +19,29 @@ class Layout extends React.Component {
               {title}
             </Link>
           </h3>
-        </header>
-        <main>{children}</main>
-        <footer>
-          Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </header> */}
+        <nav 
+          aria-label="main navigation"
+          className="navbar is-primary" 
+          role="navigation" 
+        >
+          <div className="navbar-brand">
+            <Link
+                className="navbar-item"
+                to={`/`}
+              >
+                {title}
+            </Link>
+          </div>
+        </nav>
+        <main className="section">{children}</main>
+        {/* <footer className="footer">
+          <div className="content has-text-centered">
+            <p>
+              Insert Bio
+            </p>
+          </div>
+        </footer> */}
       </div>
     )
   }

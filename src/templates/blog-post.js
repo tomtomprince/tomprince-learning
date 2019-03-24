@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Bio from "../components/bio"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,12 +16,14 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p>
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Bio />
+        <section className="section">
+          <div className="container">
+            <div className="tp-v-rhythm-container">
+            <header>
+              <h1>{post.frontmatter.title}</h1>
+              <time className="is-uppercase has-text-weight-semibold is-size-7" datetime={post.frontmatter.date}>{post.frontmatter.date}</time>
+            </header>
+            <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
         {(previous || next) && (
         <ul
@@ -50,6 +51,9 @@ class BlogPostTemplate extends React.Component {
           </li>
         </ul>
         )}
+        </div>
+        </div>
+        </section>
       </Layout>
     )
   }

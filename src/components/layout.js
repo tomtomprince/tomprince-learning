@@ -1,50 +1,47 @@
 import React from "react"
 import { Link } from "gatsby"
-class Layout extends React.Component {
-  render() {
-    const { title, children } = this.props
 
-    return (
-      <div>
-        {/* <header>
-          <h3>
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-          </h3>
-        </header> */}
-        <nav 
-          aria-label="main navigation"
-          className="navbar is-primary" 
-          role="navigation" 
-        >
-          <div className="navbar-brand">
-            <Link
-                className="navbar-item"
-                to={`/`}
-              >
-                {title}
-            </Link>
-          </div>
-        </nav>
-        <main className="section">{children}</main>
-        {/* <footer className="footer">
-          <div className="content has-text-centered">
-            <p>
-              Insert Bio
-            </p>
-          </div>
-        </footer> */}
+function Nav(props) {
+  return (
+    <nav 
+      aria-label="main navigation"
+      className="navbar is-primary" 
+      role="navigation" 
+    >
+      <div className="navbar-brand">
+        <Link
+            className="navbar-item"
+            to={`/`}
+          >
+            {props.title}
+        </Link>
       </div>
-    )
-  }
+    </nav>
+  );
+}
+
+// function Footer(props) {
+//   return (
+//     <footer className="footer">
+//       <div className="content has-text-centered">
+//         <p>
+//           Social, etc
+//         </p>
+//       </div>
+//     </footer>
+//   );
+// }
+
+function Layout(props) {
+  const { title, children } = props
+
+  return (
+    <div>
+      <Nav title={title} />
+      <main>{children}</main>
+      {/* <Footer /> */}
+    </div>
+  )
 }
 
 export default Layout

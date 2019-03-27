@@ -23,9 +23,6 @@ class BlogPostTemplate extends React.Component {
               <h1>{post.frontmatter.title}</h1>
               <time className="is-uppercase has-text-weight-semibold is-size-7" datetime={post.frontmatter.date}>{post.frontmatter.date}</time>
             </header>
-            <aside>
-              <p>{post.frontmatter.description || post.excerpt}</p>
-            </aside>
             <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
         {(previous || next) && (

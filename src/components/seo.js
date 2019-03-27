@@ -30,6 +30,7 @@ function SEO({ description, lang, meta, keywords, title }) {
   return (
     <Helmet
       htmlAttributes={{
+        class: 'has-navbar-fixed-top',
         lang,
       }}
       title={title}

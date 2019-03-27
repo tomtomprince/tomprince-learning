@@ -5,7 +5,7 @@ function Nav(props) {
   return (
     <nav 
       aria-label="main navigation"
-      className="navbar is-primary" 
+      className="navbar is-white is-fixed-top" 
       role="navigation" 
     >
       <div className="navbar-brand">

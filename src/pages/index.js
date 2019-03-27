@@ -35,16 +35,21 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <section className="section">
-          <div className="container">
-            <div className="content">
-                <h2>Hi, I'm Tom</h2>
-                <p>I'm a scrappy yet <a href="https://en.wikipedia.org/wiki/SOLID" target="_blank" rel="noopener noreferrer">solid</a> Javascript developer <a href="https://twitter.com/viventium" target="_blank" rel="noopener noreferrer">@Viventium</a>. Previously I did web things at <a href="https://twitter.com/GARP_Risk" target="_blank" rel="noopener noreferrer">@GARP_Risk</a>.</p>
-                <p>In my spare time I play guitar, read, and contemplate my love/hate relationship with the greatest city (New York, New York of course).</p>
-                <p>Open source and privacy are kind of a big deal to me. I'm usually the only dev using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="noopener noreferrer">Firefox</a> and I <a href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer">DuckDuckGo</a> instead of Googling even though I'm a firm believer in <a href="https://www.acronymfinder.com/Google-That-Shit-(GTS).html" target="_blank" rel="noopener noreferrer" title="Google That Shit">GTS</a>.</p>
+
+        <div className="columns">
+          <div className="column">
+            <div className="hero is-danger is-bold is-medium">
+              <div className="hero-body">
+                <h1 className="title has-text-centered" style={{textShadow: '2px 2px 5px rgba(32,32,32,0.6)'}}>Hi, I'm Tom</h1>
+              </div>
             </div>
           </div>
-        </section>
+          <div className="column content" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '2em', paddingRight: '2em'}}>                
+            <p>I'm a scrappy yet <a href="https://en.wikipedia.org/wiki/SOLID" target="_blank" rel="noopener noreferrer">solid</a> Javascript developer <a href="https://twitter.com/viventium" target="_blank" rel="noopener noreferrer">@Viventium</a>. Previously I did web things at <a href="https://twitter.com/GARP_Risk" target="_blank" rel="noopener noreferrer">@GARP_Risk</a>.</p>
+            <p>In my spare time I play guitar, read, and contemplate my love/hate relationship with the greatest city (New York, New York of course).</p>
+            <p>Open source and privacy are kind of a big deal to me. I'm usually the only dev using <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="noopener noreferrer">Firefox</a> and I <a href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer">DuckDuckGo</a> instead of Googling even though I'm a firm believer in <a href="https://www.acronymfinder.com/Google-That-Shit-(GTS).html" target="_blank" rel="noopener noreferrer" title="Google That Shit">GTS</a>.</p>
+          </div>
+        </div>
 
         <section className="section">
           <div className="container">

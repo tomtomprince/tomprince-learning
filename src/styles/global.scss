@@ -33,6 +33,11 @@ h3 {
     margin-top: 1rem;
 }
 
+.navbar {
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(26,26,26,0.42);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(26,26,26,0.42);
+    box-shadow: 2px 2px 5px 0px rgba(26,26,26,0.42);
+}
 @media screen and (min-width: $desktop) {
     html {
         font-size: 20px;

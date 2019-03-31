@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Tom Prince | Software Engineer`,
+    title: `Tom Prince | Javascript Developer`,
     author: `Tom Prince`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://tomprince.dev`,

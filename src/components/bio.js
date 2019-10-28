@@ -30,7 +30,7 @@ function Bio() {
               }}
             /> */}
             <p>
-              I'm {author} &mdash; a scrappy yet solid web developer based in New York, NY, USA
+              I'm {author} &mdash; I make web things and live in New York, NY, USA
             </p>
           </div>
         )

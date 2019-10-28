@@ -1,3 +1,8 @@
+# Notes
+  1. .nvmrc has the node version that netlify will install
+  2. Set env vars for yarn, etc
+  
+# Generated  Readme
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">

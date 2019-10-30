@@ -5,11 +5,13 @@ description: >-
   One of the "hard parts" of JS that catches even old guys like me off guard
   some times
 ---
-See [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-
-
-
 Closures in Javascript seem like black magic when you first see them. And sometimes the tenth time. Or when you just haven't had enough coffee. This article is my rough attempt at demystifying them.
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) defines closures as: 
+
+> A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+Basically, where you define your function determines what scope it has access to during execution.
 
 So, consider this code:
 
@@ -21,7 +23,7 @@ When incrementCounter is invoked, the JS runtime doesn't find counter in increme
 
 But what if we want to have multiple counters? We'd have to have a variable for each counter and add a parameter to incrementCounter. Not too terrible for small programs, but we can do better. This is where closures come in to play.
 
-What if I told you that when you return a function from another function in JS, if the returned function references a variable in the parent function's context, a link is maintained to that context and that variable is not garbage collected like normal. Well, that's what I'm telling you. Consider this:
+Thinking back to the definition above,  consider this:
 
 ```
 // Global Context
@@ -57,9 +59,11 @@ for(var i = 0; i < vals.length; i += 1) {
 }
 ```
 
-First you're asked what it does. It's fairly easy to infer that the intent is to print out the index and value every 2 seconds or so. But that's not what happens. What actually happens is that by the time the callback is run each time, i is 4 and vals\[i] is undefined. "4 undefined" is printed 4 times.
+First you're asked what it does. It's fairly easy to infer that the intent is to print out the index and value every 2 seconds or so. But that's not what happens. 
 
-This is because when a variable is declared using var it is assigned to the first enclosing context, in this case the global context, but it could be in a local function context as well. Whenever js looks at i it finds the latest value. So, how to fix?
+What actually happens is that by the time the callback is run each time, i is 4 and vals\[i] is undefined. "4 undefined" is printed 4 times.
+
+This is because when a variable is declared using var it is assigned to the first enclosing context. Whenever js looks at i it finds the latest value. So, how do you fix this?
 
 The easiest way is to simply use the let keyword. Variables with let (and const) are block scoped, It's dumb, but I almost didn't guess this once when asked this. I was super nervous and went for the old school, more complicated fix: bind. This looks something like this:
 
